@@ -21,12 +21,6 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAb-YO-0bR">
-                        <rect key="frame" x="101" y="65.5" width="203" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLD-EM-eKa">
                         <rect key="frame" x="101" y="43.5" width="37.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -40,17 +34,31 @@
                             <constraint firstAttribute="height" constant="70" id="vFx-Ws-pm6"/>
                         </constraints>
                     </imageView>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FQp-t6-dyD">
+                        <rect key="frame" x="154" y="86" width="150" height="2"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="KmZ-4i-chC"/>
+                        </constraints>
+                    </progressView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date and time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAb-YO-0bR">
+                        <rect key="frame" x="101" y="69" width="203" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="EjK-bJ-6GQ" secondAttribute="trailing" constant="8" id="1PH-3s-QNv"/>
                     <constraint firstItem="EjK-bJ-6GQ" firstAttribute="top" secondItem="iTV-Ll-YJh" secondAttribute="topMargin" constant="8" id="97k-fj-ex2"/>
                     <constraint firstItem="u1p-oe-pMj" firstAttribute="leading" secondItem="iTV-Ll-YJh" secondAttribute="leadingMargin" constant="7" id="BqQ-eZ-wxy"/>
                     <constraint firstAttribute="bottomMargin" secondItem="IAb-YO-0bR" secondAttribute="bottom" constant="8" id="C1q-uk-gaW"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="FQp-t6-dyD" secondAttribute="trailing" constant="8" id="C9N-xw-OS6"/>
                     <constraint firstItem="u1p-oe-pMj" firstAttribute="top" secondItem="iTV-Ll-YJh" secondAttribute="topMargin" constant="10" id="VXJ-5d-R3V"/>
                     <constraint firstItem="IAb-YO-0bR" firstAttribute="leading" secondItem="u1p-oe-pMj" secondAttribute="trailing" constant="16" id="eQJ-Tq-G6H"/>
                     <constraint firstItem="IAb-YO-0bR" firstAttribute="top" secondItem="xLD-EM-eKa" secondAttribute="bottom" constant="4" id="iph-vO-S9P"/>
                     <constraint firstItem="xLD-EM-eKa" firstAttribute="leading" secondItem="u1p-oe-pMj" secondAttribute="trailing" constant="16" id="jra-EZ-deR"/>
                     <constraint firstAttribute="trailingMargin" secondItem="IAb-YO-0bR" secondAttribute="trailing" constant="8" id="r7p-6C-tf2"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="FQp-t6-dyD" secondAttribute="bottom" constant="3.5" id="rf7-jt-Dxs"/>
                     <constraint firstItem="EjK-bJ-6GQ" firstAttribute="leading" secondItem="u1p-oe-pMj" secondAttribute="trailing" constant="16" id="uLp-zZ-KBs"/>
                 </constraints>
             </tableViewCellContentView>
@@ -58,6 +66,7 @@
                 <outlet property="dateLabel" destination="IAb-YO-0bR" id="Zf5-CZ-sRw"/>
                 <outlet property="eventImageView" destination="u1p-oe-pMj" id="xUO-th-aad"/>
                 <outlet property="placeLabel" destination="xLD-EM-eKa" id="AZ4-UD-6Bc"/>
+                <outlet property="progressView" destination="FQp-t6-dyD" id="7gk-8h-vun"/>
                 <outlet property="titleLabel" destination="EjK-bJ-6GQ" id="UzX-I9-JiQ"/>
             </connections>
             <point key="canvasLocation" x="343" y="42"/>

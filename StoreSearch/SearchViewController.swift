@@ -17,7 +17,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var searchResults:[SearchResult] = []
+    let data = SearchResult();
     var hasSearched: Bool = false
     
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ class SearchViewController: UIViewController {
         if segue.identifier == "ShowDetail" {
             let detailViewController = segue.destinationViewController as! DetailViewController
             let indexPath = sender as! NSIndexPath
-            let searchResult = searchResults[indexPath.row]
+            let searchResult = data.events[indexPath.row]
             detailViewController.searchResult = searchResult
         }
     }
@@ -64,6 +64,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()//search button누르고 나면 keyboard resign
         hasSearched = true
+        /*
         searchResults = [SearchResult]()
         
         //임시로 가짜 데이터 만들기
@@ -75,7 +76,7 @@ extension SearchViewController: UISearchBarDelegate {
                 searchResults.append(result)
             }
         }
-
+*/
         tableView.reloadData()
     }
 }
@@ -85,14 +86,12 @@ extension SearchViewController: UITableViewDataSource{
     //number of rows in section, cell for row at index path가 기본
     func tableView(tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        if !hasSearched{
-            return 0
-        }
-        else if searchResults.count == 0{//이렇게 안하면 화면에 뜨는 cell이 0이므로 nothing found를 띄울수없다
+
+        if data.events.count == 0{//이렇게 안하면 화면에 뜨는 cell이 0이므로 nothing found를 띄울수없다
             return 1
         }
         else {
-            return searchResults.count
+            return data.events.count
         }
     }
     
@@ -108,16 +107,17 @@ extension SearchViewController: UITableViewDataSource{
  cell = UITableViewCell(style: .Subtitle, reuseIdentifier: cellIdentifier)
  }
  */
-        if searchResults.count == 0{
+        if data.events.count == 0{
             cell.titleLabel!.text = "nothing found!"
             cell.dateLabel!.text = ""
             cell.placeLabel!.text = ""
         }
         else{
-            let result = searchResults[indexPath.row]
-            cell.titleLabel!.text = result.name
-            cell.placeLabel!.text = result.artistName
-            cell.dateLabel!.text = "적을게 없네..날짜나 시간?"
+            let result = data.events[indexPath.row]
+            cell.titleLabel!.text = result.title
+            cell.placeLabel!.text = result.place
+            cell.dateLabel!.text = result.date
+            cell.progressView!.setProgress(Float(result.progress), animated: false)
         }
         return cell
     }
@@ -139,7 +139,7 @@ extension SearchViewController: UITableViewDelegate{
     func tableView(tableView: UITableView,
                    willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         //data가 있는 cell만 선택되도록
-        if searchResults.count == 0 {
+        if data.events.count == 0 {
             return nil
         }
         else {

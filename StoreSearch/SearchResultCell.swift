@@ -18,6 +18,9 @@ class SearchResultCell: UITableViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     
+    @IBOutlet weak var progressView: UIProgressView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

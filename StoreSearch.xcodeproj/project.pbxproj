@@ -17,7 +17,7 @@
 		8E48CB201D1BA17700879269 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E48CB1F1D1BA17700879269 /* SearchResultCell.xib */; };
 		8E48CB221D1BA54F00879269 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48CB211D1BA54F00879269 /* SearchResultCell.swift */; };
 		8E8EFB431D1C37DB006EB24D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8EFB421D1C37DB006EB24D /* DetailViewController.swift */; };
-		8E8EFB451D1C3C51006EB24D /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8EFB441D1C3C51006EB24D /* DimmingPresentationController.swift */; };
+		8E8EFB471D1C6ECD006EB24D /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8EFB461D1C6ECD006EB24D /* PaymentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		8E48CB1F1D1BA17700879269 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		8E48CB211D1BA54F00879269 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		8E8EFB421D1C37DB006EB24D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		8E8EFB441D1C3C51006EB24D /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
+		8E8EFB461D1C6ECD006EB24D /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,7 @@
 				8E48CB1F1D1BA17700879269 /* SearchResultCell.xib */,
 				8E48CB211D1BA54F00879269 /* SearchResultCell.swift */,
 				8E8EFB421D1C37DB006EB24D /* DetailViewController.swift */,
-				8E8EFB441D1C3C51006EB24D /* DimmingPresentationController.swift */,
+				8E8EFB461D1C6ECD006EB24D /* PaymentViewController.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -154,8 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E8EFB471D1C6ECD006EB24D /* PaymentViewController.swift in Sources */,
 				8E48CB0B1D1B939200879269 /* SearchViewController.swift in Sources */,
-				8E8EFB451D1C3C51006EB24D /* DimmingPresentationController.swift in Sources */,
 				8E48CB091D1B939200879269 /* AppDelegate.swift in Sources */,
 				8E48CB1E1D1B9CA500879269 /* SearchResult.swift in Sources */,
 				8E8EFB431D1C37DB006EB24D /* DetailViewController.swift in Sources */,
