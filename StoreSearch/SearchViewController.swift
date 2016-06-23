@@ -9,6 +9,10 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    
+    struct TableViewCellIdentifiers{
+        static let searchResultCell = "SearchResultCell"
+    }
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -20,6 +24,16 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         //searchBar 자리를 남겨주기 위함
         tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0,right: 0)
+        
+        //custom cell높이에 row 높이 맞춰주기
+        tableView.rowHeight = 100
+        
+        let cellNib = UINib(nibName: TableViewCellIdentifiers.searchResultCell, bundle: nil)
+        //resuse identifier 설정해둬야 작동
+        tableView.registerNib(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.searchResultCell)
+        
+        //켜자마자 searchbar선택되어있고 바로 키보드 나오게
+        searchBar.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,6 +41,15 @@ class SearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    //detail view로 data날리는 함수
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowDetail" {
+            let detailViewController = segue.destinationViewController as! DetailViewController
+            let indexPath = sender as! NSIndexPath
+            let searchResult = searchResults[indexPath.row]
+            detailViewController.searchResult = searchResult
+        }
+    }
 
 }
 
@@ -43,6 +66,7 @@ extension SearchViewController: UISearchBarDelegate {
         hasSearched = true
         searchResults = [SearchResult]()
         
+        //임시로 가짜 데이터 만들기
         if searchBar.text! != "Lemon"{
             for i in 0...2{
                 let result = SearchResult()
@@ -51,7 +75,7 @@ extension SearchViewController: UISearchBarDelegate {
                 searchResults.append(result)
             }
         }
-       // print("The search text is: '\(searchBar.text!)'")
+
         tableView.reloadData()
     }
 }
@@ -75,23 +99,25 @@ extension SearchViewController: UITableViewDataSource{
     func tableView(tableView: UITableView,
                    cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cellIdentifier = "SearchResultCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier("SearchResultCell",
+                                                               forIndexPath: indexPath) as! SearchResultCell
         
-        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
-        
-        if cell == nil {
-            cell = UITableViewCell(style: .Subtitle,
-                                   reuseIdentifier: cellIdentifier)
-        }
-        
+        /*//기존코드, nib을 만들지 않으면 이렇게밖에 쓸수없음
+ let cellIdentifier = "SearchResultCell" var cell: UITableViewCell! =
+ tableView.dequeueReusableCellWithIdentifier(cellIdentifier) if cell == nil {
+ cell = UITableViewCell(style: .Subtitle, reuseIdentifier: cellIdentifier)
+ }
+ */
         if searchResults.count == 0{
-            cell.textLabel!.text = "nothing found!"
-            cell.detailTextLabel!.text = ""
+            cell.titleLabel!.text = "nothing found!"
+            cell.dateLabel!.text = ""
+            cell.placeLabel!.text = ""
         }
         else{
             let result = searchResults[indexPath.row]
-            cell.textLabel!.text = result.name
-            cell.detailTextLabel!.text = result.artistName
+            cell.titleLabel!.text = result.name
+            cell.placeLabel!.text = result.artistName
+            cell.dateLabel!.text = "적을게 없네..날짜나 시간?"
         }
         return cell
     }
@@ -106,6 +132,8 @@ extension SearchViewController: UITableViewDelegate{
                    didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //선택 후 바로 선택해제
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        //선택하면 DetailView로
+        performSegueWithIdentifier("ShowDetail", sender: indexPath)
     }
     
     func tableView(tableView: UITableView,

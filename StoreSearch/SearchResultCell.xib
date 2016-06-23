@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" id="xkE-CC-3GA" customClass="SearchResultCell" customModule="StoreSearch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xkE-CC-3GA" id="iTV-Ll-YJh">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjK-bJ-6GQ">
+                        <rect key="frame" x="101" y="16" width="203" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAb-YO-0bR">
+                        <rect key="frame" x="101" y="65.5" width="203" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLD-EM-eKa">
+                        <rect key="frame" x="101" y="43.5" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="u1p-oe-pMj">
+                        <rect key="frame" x="15" y="18" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="ZDB-Up-HcP"/>
+                            <constraint firstAttribute="height" constant="70" id="vFx-Ws-pm6"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="EjK-bJ-6GQ" secondAttribute="trailing" constant="8" id="1PH-3s-QNv"/>
+                    <constraint firstItem="EjK-bJ-6GQ" firstAttribute="top" secondItem="iTV-Ll-YJh" secondAttribute="topMargin" constant="8" id="97k-fj-ex2"/>
+                    <constraint firstItem="u1p-oe-pMj" firstAttribute="leading" secondItem="iTV-Ll-YJh" secondAttribute="leadingMargin" constant="7" id="BqQ-eZ-wxy"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="IAb-YO-0bR" secondAttribute="bottom" constant="8" id="C1q-uk-gaW"/>
+                    <constraint firstItem="u1p-oe-pMj" firstAttribute="top" secondItem="iTV-Ll-YJh" secondAttribute="topMargin" constant="10" id="VXJ-5d-R3V"/>
+                    <constraint firstItem="IAb-YO-0bR" firstAttribute="leading" secondItem="u1p-oe-pMj" secondAttribute="trailing" constant="16" id="eQJ-Tq-G6H"/>
+                    <constraint firstItem="IAb-YO-0bR" firstAttribute="top" secondItem="xLD-EM-eKa" secondAttribute="bottom" constant="4" id="iph-vO-S9P"/>
+                    <constraint firstItem="xLD-EM-eKa" firstAttribute="leading" secondItem="u1p-oe-pMj" secondAttribute="trailing" constant="16" id="jra-EZ-deR"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="IAb-YO-0bR" secondAttribute="trailing" constant="8" id="r7p-6C-tf2"/>
+                    <constraint firstItem="EjK-bJ-6GQ" firstAttribute="leading" secondItem="u1p-oe-pMj" secondAttribute="trailing" constant="16" id="uLp-zZ-KBs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="IAb-YO-0bR" id="Zf5-CZ-sRw"/>
+                <outlet property="eventImageView" destination="u1p-oe-pMj" id="xUO-th-aad"/>
+                <outlet property="placeLabel" destination="xLD-EM-eKa" id="AZ4-UD-6Bc"/>
+                <outlet property="titleLabel" destination="EjK-bJ-6GQ" id="UzX-I9-JiQ"/>
+            </connections>
+            <point key="canvasLocation" x="343" y="42"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Placeholder" width="60" height="60"/>
+    </resources>
+</document>
