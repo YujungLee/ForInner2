@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		8E48CB091D1B939200879269 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48CB081D1B939200879269 /* AppDelegate.swift */; };
-		8E48CB0B1D1B939200879269 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48CB0A1D1B939200879269 /* ViewController.swift */; };
+		8E48CB0B1D1B939200879269 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48CB0A1D1B939200879269 /* SearchViewController.swift */; };
 		8E48CB0E1D1B939200879269 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E48CB0C1D1B939200879269 /* Main.storyboard */; };
 		8E48CB111D1B939200879269 /* StoreSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E48CB0F1D1B939200879269 /* StoreSearch.xcdatamodeld */; };
 		8E48CB131D1B939200879269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E48CB121D1B939200879269 /* Assets.xcassets */; };
 		8E48CB161D1B939200879269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E48CB141D1B939200879269 /* LaunchScreen.storyboard */; };
+		8E48CB1E1D1B9CA500879269 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48CB1D1D1B9CA500879269 /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8E48CB051D1B939200879269 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E48CB081D1B939200879269 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8E48CB0A1D1B939200879269 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8E48CB0A1D1B939200879269 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8E48CB0D1D1B939200879269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E48CB101D1B939200879269 /* StoreSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StoreSearch.xcdatamodel; sourceTree = "<group>"; };
 		8E48CB121D1B939200879269 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E48CB151D1B939200879269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E48CB171D1B939200879269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E48CB1D1D1B9CA500879269 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				8E48CB081D1B939200879269 /* AppDelegate.swift */,
-				8E48CB0A1D1B939200879269 /* ViewController.swift */,
+				8E48CB0A1D1B939200879269 /* SearchViewController.swift */,
 				8E48CB0C1D1B939200879269 /* Main.storyboard */,
 				8E48CB121D1B939200879269 /* Assets.xcassets */,
 				8E48CB141D1B939200879269 /* LaunchScreen.storyboard */,
 				8E48CB171D1B939200879269 /* Info.plist */,
 				8E48CB0F1D1B939200879269 /* StoreSearch.xcdatamodeld */,
+				8E48CB1D1D1B9CA500879269 /* SearchResult.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -138,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E48CB0B1D1B939200879269 /* ViewController.swift in Sources */,
+				8E48CB0B1D1B939200879269 /* SearchViewController.swift in Sources */,
 				8E48CB091D1B939200879269 /* AppDelegate.swift in Sources */,
+				8E48CB1E1D1B9CA500879269 /* SearchResult.swift in Sources */,
 				8E48CB111D1B939200879269 /* StoreSearch.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

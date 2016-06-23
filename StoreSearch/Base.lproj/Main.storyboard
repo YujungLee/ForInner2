@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +16,39 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9VW-fa-iSp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="dhy-mZ-aRy"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="v3K-Gu-8tV"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder=" what you want to search" translatesAutoresizingMaskIntoConstraints="NO" id="YBy-Py-oHy">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" red="0.67814880609512329" green="0.93042850494384766" blue="0.92354446649551392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="a5X-bg-edA"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YBy-Py-oHy" secondAttribute="trailing" id="1fb-fL-7nm"/>
+                            <constraint firstItem="YBy-Py-oHy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Xxi-QU-g48"/>
+                            <constraint firstItem="YBy-Py-oHy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="agI-Gq-Zgz"/>
+                            <constraint firstItem="9VW-fa-iSp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cCI-ed-uSa"/>
+                            <constraint firstItem="9VW-fa-iSp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cIx-Ib-QwH"/>
+                            <constraint firstAttribute="trailing" secondItem="9VW-fa-iSp" secondAttribute="trailing" id="lu4-SD-T4v"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9VW-fa-iSp" secondAttribute="bottom" id="qi8-rc-som"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="YBy-Py-oHy" id="QGu-8c-rmP"/>
+                        <outlet property="tableView" destination="9VW-fa-iSp" id="dAU-EI-swo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
