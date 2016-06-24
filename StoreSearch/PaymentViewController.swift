@@ -29,8 +29,8 @@ class PaymentViewController: UIViewController {
         countStepper.autorepeat = true
         countStepper.maximumValue = 50
         countStepper.minimumValue = 1
-
         
+        totalTextField.text = String(searchResult.price)
         
         if searchResult != nil{
             updateUI()
